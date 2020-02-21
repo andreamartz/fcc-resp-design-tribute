@@ -1,30 +1,92 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: 'Lato', sans-serif;
+  
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  
+  --fs-h1: 3rem;
+  --fs-heading: 2.25rem;
+  --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+  #img-div {
+    max-width: 50%;
+  }
+}
+
+/* General styles */
+
 body {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-  background: #eee;
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
   padding: 20px;
+  text-align: center;
+}
+
+img {
+  /* display: block; */
+  max-width: 100%;
+}
+
+hr {
+  max-width: 5%;
+  height: 3px;
+  background-color: var(--clr-dark);
+  color: var(--clr-dark);
+}
+
+/* Typography */
+
+h1 {
+  line-height: 1.1;
+  font-size: var(--fs-h1)
+}
+
+.heading {
+  font-size: var(--fs-heading);
+}
+
+/* Page Styling */
+
+h1 {
+  margin: 0;
 }
 
 #img-div {
-  position: relative;
-  max-width: 100%;
-  max-height: 650px;
-/*   z-index: 2; */
-/*   background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
   padding: 10px;
-  border: 5px solid red;
   margin: auto;
   overflow: hidden;
-/*   object-fit: contain; */
 }
 
-#image {
-  position: static;
-  top: -100px;
-/*  left: -200px; */
-  max-width: 100%;
-  z-index: -1;
-/*   overflow-y: hidden; */
+.img-container {
+  max-height: 650px;
+  overflow: hidden;
+}
+
+#img-caption {
+  background-color: var(--clr-light);
+  font-size: 1.2em;
+  padding: 20px;
 }
 
 #tribute-info {
@@ -35,16 +97,13 @@ body {
   max-width: 100%;
 }
 
-#img-caption {
-  position: absolute;
-  background-color: white;
-  bottom: 0px;
-  font-size: 1.2em;
-  padding: 20px;
-  margin-top: -200px;
+footer {
+  padding: 50px 0;
+  font-style: italic;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
 }
 
-#learnMore {
-  margin-top: 50px;
-  font-style: italic;
+a {
+  color: var(--clr-light);
 }
